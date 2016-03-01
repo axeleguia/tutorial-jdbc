@@ -60,9 +60,11 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 				orderDetail.setProduct(productService.findProductById(rs.getInt("productId")));
 				orderDetailList.add(orderDetail);
 			}
+			
 			int count = orderDetailList.size();
 			log.info("Records selected: " + count);
 			return orderDetailList;
+			
 		} catch (Exception exception) {
 			log.error(exception);
 		} finally {
@@ -83,7 +85,7 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 
 	public boolean addDetailsInOrder(Orders order, List<OrderDetail> orderDetailList) {
 		
-		log.info("#insertDetailsInOrder");
+		log.info("#addDetailsInOrder");
 		
 		boolean flag = false;
 				
